@@ -2,21 +2,35 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Ivan",
+      "name": "Ivan",
       "phone": "12334569874",
-      "email": "ivan@gmail.com"
+      "email": "ivan@gmail.com",
+      "password": "12345678",
+      "cpf": "59821259030"
     },
     {
       "id": 2,
-      "firstName": "Amanda",
+      "name": "Amanda",
       "phone": "12334569874",
-      "email": "amanda@gmail.com"
+      "email": "amanda@gmail.com",
+      "password": "12345678",
+      "cpf": "51630254061"
     },
     {
       "id": 3,
-      "firstName": "Marina",
+      "name": "Marina",
       "phone": "12334569874",
-      "email": "marina@gmail.com"
+      "email": "marina@gmail.com",
+      "password": "12345678",
+      "cpf": "72239783095"
+    },
+    {
+      "id": 4,
+      "name": "Ivan",
+      "phone": "1111111111",
+      "cpf": "00982084030",
+      "email": "ivan@teste.com",
+      "password": "olamundo"
     }
   ]
 }

@@ -31,6 +31,8 @@ import { DetalheComponent } from './pages/detalhe/detalhe.component';
 import { ListaSimplesComponent } from './pages/lista-simples/lista-simples.component';
 import { EditarComponent } from './pages/editar/editar.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { UserService } from './services/user.service';
+import { ModalComponent, ModalExemplo } from './pages/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,6 @@ import { NgxMaskModule } from 'ngx-mask';
     Page2Component,
     PrivadoComponent,
     DetalheComponent,
-    ListaSimplesComponent,
     EditarComponent
   ],
   imports: [
@@ -66,11 +67,13 @@ import { NgxMaskModule } from 'ngx-mask';
     MatIconModule,
     MatListModule,
     HttpClientModule,
+    ModalComponent,
+    ModalExemplo,
     NgxMaskModule.forRoot({
       validation: true,
     })
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

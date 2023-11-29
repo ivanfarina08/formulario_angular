@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { GenericValidator } from 'src/app/comum/validador';
 import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -31,8 +32,9 @@ export class CadastroComponent {
     ])]
   });
 
+  constructor(private service: UserService){}
+
   onSubmit(): void {
-    this.user.id = '';
     if(this.addressForm.controls['name'].value)
       this.user.name = this.addressForm.controls['name'].value;
     if(this.addressForm.controls['email'].value)
@@ -45,6 +47,17 @@ export class CadastroComponent {
       this.user.password = this.addressForm.controls['password'].value;
     alert('Cadastrado!');
     console.log(this.user);
-    localStorage.setItem('user', JSON.stringify(this.user));
+    //localStorage.setItem('user', JSON.stringify(this.user));
+
+    this.service.addUsers(this.user).subscribe({
+      next: (response) => {
+        console.log(response)
+        alert('Dado registrado com sucesso.')
+      },
+      error: (erro:any) => {
+        console.log(erro)
+        alert('Ocorreu algum erro.')
+      }
+    });
   }
 }
